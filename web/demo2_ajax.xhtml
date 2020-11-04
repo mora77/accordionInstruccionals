@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/templete_general.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="Ajax 2"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <!-- ======= Intro Section ======= -->
+            <section id="intro">
+                <div class="intro-container">
+                    <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+                        <ol class="carousel-indicators"></ol>
+
+                        <div class="carousel-inner" role="listbox">
+
+                            <div class="carousel-item active" style="background-image: url(${facesContext.externalContext.requestContextPath}/resources/assets/img/intro-carousel/one.png)">
+                                <div class="carousel-container">
+                                    <div class="container">
+                                        <h2 class="animate__animated animate__fadeInDown">Bienvenido Acordeonista</h2>
+                                        <p class="animate__animated animate__fadeInUp">Desemaos que tu experiencia de aprendizaje sea la mejor y para lograr esto contamos con los mejores maestros para todos los niveles.</p>
+                                        <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">¡A tocar!</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item" style="background-image: url(${facesContext.externalContext.requestContextPath}/resources/assets/img/intro-carousel/two.png)">
+                                <div class="carousel-container">
+                                    <div class="container">
+                                        <h2 class="animate__animated animate__fadeInDown">Aprendizaje real</h2>
+                                        <p class="animate__animated animate__fadeInUp">Aprender en un idioma que todos los acordeonistas entiendan es importnte, es por eso que los maestros son personas que saben comprender a los aprendices de todos los niveles y esto crea un hambiente de aprendizaje ideal.</p>
+                                        <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">¡A tocar!</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item" style="background-image: url(${facesContext.externalContext.requestContextPath}/resources/assets/img/intro-carousel/three.png)">
+                                <div class="carousel-container">
+                                    <div class="container">
+                                        <h2 class="animate__animated animate__fadeInDown">Tu manejas el tiempo</h2>
+                                        <p class="animate__animated animate__fadeInUp">Al ser una página web, puedes ingresar a todas horas para aprender tus canciones favoritas, parea que tengas mejor gestión de tus tiempos y sea en tus tiempos libres que te dediques a tocar acordeón</p>
+                                        <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">¡A tocar!</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item" style="background-image: url(${facesContext.externalContext.requestContextPath}/resources/assets/img/intro-carousel/four.png)">
+                                <div class="carousel-container">
+                                    <div class="container">
+                                        <h2 class="animate__animated animate__fadeInDown">Toca como los mejores</h2>
+                                        <p class="animate__animated animate__fadeInUp">Como cualquier instrumento, tocar el acordeón requiere de práctica y de ensayar constantemente. No existen trucos de magia, únicamente es la practica, es por eso que recomendamos ser constante todos los días y por lo menos una hora.</p>
+                                        <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">¡A tocar!</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+
+                        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+
+                    </div>
+                </div>
+            </section><!-- End Intro Section -->
+
+            <main id="main">
+
+                <!-- ======= Featured Services Section Section ======= -->
+                <section id="featured-services">
+                    <div class="container">
+                        <div class="row">
+
+                            <h1>
+                                Demo2 Ajax
+                            </h1> 
+
+                            <h:form>
+                                <h:panelGrid columns="2">
+                                    <h:outputLabel value="Pais:"/>
+                                    <p:selectOneMenu id="pais" value="#{ajax2.id_pais}" filter="true" style="width: 350px">
+                                        <f:selectItem itemLabel="--Seleccionar--" itemValue="0"/>
+                                        <f:selectItems value="#{ajax2.listaPaises}"/>
+                                        <p:ajax event="change" update="entidad,municipio" listener="#{ajax2.buscaEntidades}" rendered="true"/>
+                                    </p:selectOneMenu>
+
+                                    <h:outputLabel value="Entidades" />
+                                    <p:selectOneMenu id="entidad" value="#{ajax2.id_entidad}" filter="true" style="width: 350px">
+                                        <f:selectItem itemLabel="--Seleccionar--" itemValue="0"/>
+                                        <f:selectItems value="#{ajax2.listaEntidades}" itemValue="#{ajax2.id_entidad}"/>
+                                        <p:ajax event="change" update="municipio" listener="#{ajax2.buscaMunicipios}" rendered="true"/>
+                                    </p:selectOneMenu>
+
+                                    <h:outputLabel value="Municipios" />
+                                    <p:selectOneMenu id="municipio" value="#{ajax2.id_municipio}" filter="true" style="width: 350px">
+                                        <f:selectItem itemLabel="--Seleccionar--" itemValue="0"/>
+                                        <f:selectItems value="#{ajax2.listaMunicipios}" itemValue="#{ajax2.id_municipio}"/>
+                                    </p:selectOneMenu>
+                                </h:panelGrid>
+                            </h:form>
+
+                        </div>
+                    </div>
+                </section><!-- End Featured Services Section -->
+
+            </main>
+        </ui:define>
+    </ui:composition>
+
+</html>

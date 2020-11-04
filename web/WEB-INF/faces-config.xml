@@ -1,0 +1,479 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <application>
+        <resource-bundle>
+            <base-name>/Bundle</base-name>
+            <var>bundle</var>
+        </resource-bundle>
+    </application>
+    <navigation-rule>
+        <from-view-id>/acordeones/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/acordeones/List_cliente.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cliente</from-outcome>
+            <to-view-id>/cliente.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/acordeones/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/canciones/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/canciones/List_cliente.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cliente</from-outcome>
+            <to-view-id>/cliente.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/canciones/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/categorias/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    
+    <navigation-rule>
+        <from-view-id>/categorias/List_cliente.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cliente</from-outcome>
+            <to-view-id>/cliente.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/categorias/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/detalleVenta/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/detalleVenta/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/entidades/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/entidades/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/instruccionales/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/instruccionales/List_cliente.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cliente</from-outcome>
+            <to-view-id>/cliente.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/instruccionales/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/municipios/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/municipios/List_restaurar.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/paises/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/paises/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/tiposPago/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/tiposPago/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/tiposUsuario/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/tiposUsuario/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/tiposVenta/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/tiposVenta/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/tonos/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/tonos/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/usuarios/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/usuarios/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/ventas/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/ventas/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/videoAdornos/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/videoAdornos/List_cliente.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cliente</from-outcome>
+            <to-view-id>/cliente.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/videoAdornos/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/videoPuente/List.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/videoPuente/List_cliente.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cliente</from-outcome>
+            <to-view-id>/cliente.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/videoPuente/List_baja.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cruds</from-outcome>
+            <to-view-id>/cruds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

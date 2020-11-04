@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="VideoPuenteCreateDlg" widgetVar="VideoPuenteCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateVideoPuenteTitle}">
+            <h:form id="VideoPuenteCreateForm" enctype="multipart/form-data">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{videoPuenteController.selected != null}">
+                        <p:outputLabel value="Seleccionar archivo" for="foto" />
+                        <p:fileUpload id="foto" value="#{videoPuenteController.video}" required="true" requiredMessage="Archivo obligatorio" mode="simple" allowTypes="/(\.|\/)(mp4|3gp|mpg)$/1"/>
+                        
+                        
+                        
+                        
+                        <p:outputLabel value="#{bundle.CreateVideoPuenteLabel_idInstruccional}" for="idInstruccional" />
+                        <p:selectOneMenu id="idInstruccional" value="#{videoPuenteController.selected.idInstruccional}" >
+                            <f:selectItems value="#{instruccionalesController.itemsAvailableSelectOne}"
+                                           var="idInstruccionalItem"
+                                           itemValue="#{idInstruccionalItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:inputText id="aux" value="#{videoPuenteController.aux}" title="aux" type="hidden"/>
+                    <p:commandButton value="Guardar Archivo" action="#{videoPuenteController.Almacenavideo}" ajax="false"
+                                     update="display,:VideoPuenteListForm:datalist,:growl"/>
+                    
+                    <p:commandButton value="#{bundle.Cancel}" onclick="VideoPuenteCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

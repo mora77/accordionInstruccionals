@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template_crud_cliente.xhtml">
+
+        <ui:define name="body">
+            <main id="main">
+
+                <!-- ======= Portfolio Section ======= -->
+                <section id="portfolio" class="section-bg">
+                    <div class="container" data-aos="fade-up">
+
+                        <header class="section-header">
+                            <h3 class="section-title">Bienvenido Alumno</h3>
+                        </header>
+
+                        <div class="row" data-aos="fade-up" data-aos-delay="100">
+                            <div class=" col-lg-12">
+                                <ul id="portfolio-flters">
+                                    <li data-filter="*" class="filter-active">All</li>
+                                    <li data-filter=".filter-ac">Acordeones</li>
+                                    <li data-filter=".filter-mu">Musica</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ac">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/acordeones/List_cliente" value="Acordeones"/></h4>
+                                        <p>Acordeones</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-mu">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/canciones/List_cliente" value="Canciones"/></h4>
+                                        <p>Música</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-mu">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/categorias/List_cliente" value="Categorias"/></h4>
+                                        <p>Música</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ac">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/instruccionales/List_cliente" value="Instrucionales"/></h4>
+                                        <p>Acordeón</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ac">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/videoAdornos/List_cliente" value="VideoAdornos"/></h4>
+                                        <p>Acordeones</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ac">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/videoPuente/List_cliente" value="Mostrar video puentes"/></h4>
+                                        <p>Acordeones</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            </div>
+                            
+
+                        </div>
+                </section><!-- End Portfolio Section -->
+
+
+            </main>
+        </ui:define>
+    </ui:composition>
+
+</html>

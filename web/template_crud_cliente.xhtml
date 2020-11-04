@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta charset="utf-8"/>
+        <title><ui:insert name="title">Alumno</ui:insert></title>
+
+        <link href="${facesContext.externalContext.requestContextPath}/resources/assets/img/favicon.png" rel="icon"/>
+        <link href="${facesContext.externalContext.requestContextPath}/resources/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet"/>
+
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputScript library="js" name="jsfcrud.js"/>
+
+        <h:outputStylesheet name="assets/css/style.css"/>
+
+        <!-- Vendor CSS Files -->
+        <h:outputStylesheet name="assets/vendor/bootstrap/css/bootstrap.min.css"/>
+        <h:outputStylesheet name="assets/vendor/icofont/icofont.min.css"/>
+        <h:outputStylesheet name="assets/vendor/font-awesome/css/font-awesome.min.css"/>
+        <h:outputStylesheet name="assets/vendor/ionicons/css/ionicons.min.css"/>
+        <h:outputStylesheet name="assets/vendor/animate.css/animate.min.css"/>
+        <h:outputStylesheet name="assets/vendor/venobox/venobox.css"/>
+        <h:outputStylesheet name="assets/vendor/owl.carousel/assets/owl.carousel.min.css"/>
+        <h:outputStylesheet name="assets/vendor/aos/aos.css"/>
+
+        <!-- Template Main CSS File -->
+        <h:outputStylesheet name="assets/css/style.css"/>
+
+        <!-- =======================================================
+  * Template Name: BizPage - v3.1.0
+  * Template URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+        <f:event type="preRenderView" listener="#{login.verificanivel(4)}"/>
+    </h:head>
+
+    <h:body>
+
+        <p:growl id="growl" life="3000" />
+
+
+        <!-- ======= Header ======= -->
+        <header id="header" class="fixed-top header-transparent">
+            <div class="container-fluid">
+
+                <div class="row justify-content-center">
+                    <div class="col-xl-11 d-flex align-items-center">
+                        <h1 class="logo mr-auto"><a href="index.html">MasterAcordion Instruccionals</a></h1>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+                        <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+                        <nav class="nav-menu d-none d-lg-block">
+                            <ul>
+                                <li><h:link outcome="bienvenida" value="Inicio"/></li>
+
+                                <li class="drop-down active"><h:link outcome="cliente" value="CRUDS"/>
+                                    <ul>
+                                        <li><h:link outcome="/acordeones/List_cliente" value="Acordeones"/></li>
+
+                                        <li><h:link outcome="/canciones/List_cliente" value="Canciones"/></li>
+
+                                        <li><h:link outcome="/categorias/List_cliente" value="Categorias"/></li>
+
+                                        <li><h:link outcome="/instruccionales/List_cliente" value="Instrucionales"/></li>
+
+                                        <li><h:link outcome="/videoAdornos/List_cliente" value="VideoAdornos"/></li>
+
+                                        <li><h:link outcome="/videoPuente/List_cliente" value="Video puentes"/></li>
+
+                                    </ul>
+                                </li>
+                                
+                                <li class="drop-down"><a href="">Editar</a>
+                                    <ul>
+                                        <li><h:link outcome="demo1_ajax.xhtml" value="Editar datos"/></li>
+                                    </ul>
+                                </li>
+                                
+                                <li><a href="#contact">Contact Us</a></li>
+
+                                <li><h:outputLabel style="color: lime" value="#{sessionScope.nom_completo}"/></li>
+
+                                <li><h:form>
+                                    <p:commandButton actionListener="#{login.cerrarsesion()}" value="cerrar sesión" class="nav-menu"/>
+                                    </h:form></li>
+
+                            </ul>
+                        </nav><!-- .nav-menu -->
+
+
+                    </div>
+                </div>
+
+            </div>
+        </header><!-- End Header -->
+
+
+        <p:layoutUnit position="center">
+            <ui:insert name="body"/>
+        </p:layoutUnit>
+
+
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6 footer-info">
+                            <h3>Master Acordeon I.</h3>
+                            <p>Aprender y enseñar acordeón nunca fue tan sencillo como lo es actualmete, Master Acordeon Instruccionals facilita esta labor, logrando que nuestros usuarios tengan un nivel de satisfacción enorme.</p>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="ion-ios-arrow-right"></i> <a href="#">Inicio</a></li>
+                                <li><i class="ion-ios-arrow-right"></i> <a href="#">Acerca de</a></li>
+                                <li><i class="ion-ios-arrow-right"></i> <a href="#">Servicios</a></li>
+                                <li><i class="ion-ios-arrow-right"></i> <a href="#">Terminos del servicio</a></li>
+                                <li><i class="ion-ios-arrow-right"></i> <a href="#">Politica de privacidad</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-contact">
+                            <h4>Contactanos</h4>
+                            <p>
+                                Rayon #60 <br/>
+                                Heroica Zitácuaro, 61500<br/>
+                                Michoacán, México <br/>
+                                <strong>Telefono:</strong> +52 715 112 52 51<br/>
+                                <strong>Email:</strong> bymora77@gmail.com.com<br/>
+                            </p>
+
+                            <div class="social-links">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-newsletter">
+                            <h4>Estamos para</h4>
+                            <p>Lograr que cada persona logre aprender de manera sencilla y rápida tocar melodías de este instrumento tan sofisticado y placentero.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="copyright">
+                    &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    <!--
+                    All the links in the footer should remain intact.
+                    You can delete the links only if you purchased the pro version.
+                    Licensing information: https://bootstrapmade.com/license/
+                    Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+                    -->
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
+            </div>
+        </footer><!-- End Footer -->
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
+        <!-- Vendor JS Files -->
+        <!--<h:outputScript name="assets/vendor/jquery/jquery.min.js"/>-->
+        <h:outputScript name="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"/>
+        <h:outputScript name="assets/vendor/jquery.easing/jquery.easing.min.js"/>
+        <h:outputScript name="assets/vendor/php-email-form/validate.js"/>
+        <h:outputScript name="assets/vendor/waypoints/jquery.waypoints.min.js"/>
+        <h:outputScript name="assets/vendor/counterup/counterup.min.js"/>
+        <h:outputScript name="assets/vendor/isotope-layout/isotope.pkgd.min.js"/>
+        <h:outputScript name="assets/vendor/venobox/venobox.min.js"/>
+        <h:outputScript name="assets/vendor/owl.carousel/owl.carousel.min.js"/>
+        <h:outputScript name="assets/vendor/aos/aos.js"/>
+        <!-- Template Main JS File -->
+        <h:outputScript name="assets/js/main.js"/>
+    </h:body>
+
+</html>

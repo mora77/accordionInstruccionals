@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AcordeonesCreateDlg" widgetVar="AcordeonesCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateAcordeonesTitle}">
+            <h:form id="AcordeonesCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{acordeonesController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateAcordeonesLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{acordeonesController.selected.nombre}" title="#{bundle.CreateAcordeonesTitle_nombre}" required="true" requiredMessage="#{bundle.CreateAcordeonesRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.CreateAcordeonesLabel_marca}" for="marca" />
+                        <p:inputText id="marca" value="#{acordeonesController.selected.marca}" title="#{bundle.CreateAcordeonesTitle_marca}" required="true" requiredMessage="#{bundle.CreateAcordeonesRequiredMessage_marca}"/>
+                        <p:outputLabel value="#{bundle.CreateAcordeonesLabel_idTono}" for="idTono" />
+                        <p:selectOneMenu id="idTono" value="#{acordeonesController.selected.idTono}" required="true" requiredMessage="#{bundle.EditAcordeonesRequiredMessage_idTono}">
+                            <f:selectItems value="#{tonosController.itemsAvailableSelectOne}"
+                                           var="idTonoItem"
+                                           itemValue="#{idTonoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{acordeonesController.create}" value="#{bundle.Save}" update="display,:AcordeonesListForm:datalist,:growl" oncomplete="handleSubmit(args,'AcordeonesCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="AcordeonesCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

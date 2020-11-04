@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CancionesEditDlg" widgetVar="CancionesEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditCancionesTitle}">
+            <h:form id="CancionesEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{cancionesController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditCancionesLabel_id}" for="id" />
+                        <p:inputText disabled="true" id="id" value="#{cancionesController.selected.id}" title="#{bundle.EditCancionesTitle_id}" required="true" requiredMessage="#{bundle.EditCancionesRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditCancionesLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{cancionesController.selected.nombre}" title="#{bundle.EditCancionesTitle_nombre}" required="true" requiredMessage="#{bundle.EditCancionesRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.EditCancionesLabel_artista}" for="artista" />
+                        <p:inputText id="artista" value="#{cancionesController.selected.artista}" title="#{bundle.EditCancionesTitle_artista}" />
+                        <p:outputLabel value="#{bundle.EditCancionesLabel_status}" for="status" />
+                        
+                        <p:selectOneMenu id="status" value="#{cancionesController.selected.status}" required="true" requiredMessage="#{bundle.EditCancionesRequiredMessage_status}" style="width:125px">
+                            <f:selectItem itemLabel="Activo" itemValue="1" />
+                            <f:selectItem itemLabel="Baja" itemValue="0" />
+                        </p:selectOneMenu>
+                        
+                        <p:outputLabel value="#{bundle.EditCancionesLabel_idTono}" for="idTono" />
+                        <p:selectOneMenu id="idTono" value="#{cancionesController.selected.idTono}" required="true" requiredMessage="#{bundle.EditCancionesRequiredMessage_idTono}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{tonosController.itemsAvailableSelectOne}"
+                                           var="idTonoItem"
+                                           itemValue="#{idTonoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditCancionesLabel_idCategoria}" for="idCategoria" />
+                        <p:selectOneMenu id="idCategoria" value="#{cancionesController.selected.idCategoria}" required="true" requiredMessage="#{bundle.EditCancionesRequiredMessage_idCategoria}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{categoriasController.itemsAvailableSelectOne}"
+                                           var="idCategoriaItem"
+                                           itemValue="#{idCategoriaItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{cancionesController.update}" value="#{bundle.Save}" update="display,:CancionesListForm:datalist,:growl" oncomplete="handleSubmit(args, 'CancionesEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CancionesEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

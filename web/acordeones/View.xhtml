@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AcordeonesViewDlg" widgetVar="AcordeonesViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewAcordeonesTitle}">
+            <h:form id="AcordeonesViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{acordeonesController.selected != null}">
+                        <h:outputText value="#{bundle.ViewAcordeonesLabel_id}"/>
+                        <h:outputText value="#{acordeonesController.selected.id}" title="#{bundle.ViewAcordeonesTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewAcordeonesLabel_nombre}"/>
+                        <h:outputText value="#{acordeonesController.selected.nombre}" title="#{bundle.ViewAcordeonesTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewAcordeonesLabel_marca}"/>
+                        <h:outputText value="#{acordeonesController.selected.marca}" title="#{bundle.ViewAcordeonesTitle_marca}"/>
+                        <h:outputText value="#{bundle.ViewAcordeonesLabel_status}"/>
+                        <h:outputText value="#{acordeonesController.selected.status}" title="#{bundle.ViewAcordeonesTitle_status}"/>
+                        <h:outputText value="#{bundle.ViewAcordeonesLabel_idTono}"/>
+                        <h:outputText value="#{acordeonesController.selected.idTono}" title="#{bundle.ViewAcordeonesTitle_idTono}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="AcordeonesViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

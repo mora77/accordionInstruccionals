@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template_crud.xhtml">
+
+        <ui:define name="body">
+            <main id="main">
+
+                <!-- ======= Portfolio Section ======= -->
+                <section id="portfolio" class="section-bg">
+                    <div class="container" data-aos="fade-up">
+
+                        <header class="section-header">
+                            <h3 class="section-title">Cruds Administrador</h3>
+                        </header>
+
+                        <div class="row" data-aos="fade-up" data-aos-delay="100">
+                            <div class=" col-lg-12">
+                                <ul id="portfolio-flters">
+                                    <li data-filter="*" class="filter-active">All</li>
+                                    <li data-filter=".filter-ub">Ubicación</li>
+                                    <li data-filter=".filter-ac">Acordeones</li>
+                                    <li data-filter=".filter-mu">Musica</li>
+                                    <li data-filter=".filter-ot">Otros</li>
+                                    <li data-filter=".filter-bo">Borrados</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ac">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/acordeones/List" value="Acordeones"/></h4>
+                                        <p>Acordeones</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-mu">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/canciones/List" value="Canciones"/></h4>
+                                        <p>Música</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-mu">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/categorias/List" value="Categorias"/></h4>
+                                        <p>Música</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-mu">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/detalleVenta/List" value="Detalles de venta"/></h4>
+                                        <p>Música</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ub">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/ubicacion.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/ubicacion.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/entidades/List" value="Entidades"/></h4>
+                                        <p>Ubicación</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ac">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/instruccionales/List" value="Instrucionales"/></h4>
+                                        <p>Acordeón</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ub">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/ubicacion.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/ubicacion.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/municipios/List" value="Municipios"/></h4>
+                                        <p>Ubicación</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ub">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/ubicacion.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/ubicacion.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/paises/List" value="Paises"/></h4>
+                                        <p>Ubicación</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ot">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/otros.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/otros.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/tiposPago/List" value="Tipos de pago"/></h4>
+                                        <p>Otros</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ot">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/otros.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/otros.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/tiposUsuario/List" value="Tipos de usuario"/></h4>
+                                        <p>Otros</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ot">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/otros.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/otros.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/tiposVenta/List" value="Tipos de venta"/></h4>
+                                        <p>Otros</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-mu">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/tonos/List" value="Tonos"/></h4>
+                                        <p>Música</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ot">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/otros.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/otros.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/usuarios/List" value="Usuarios"/></h4>
+                                        <p>Otros</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-mu">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/musica.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/ventas/List" value="Ventas"/></h4>
+                                        <p>Música</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ac">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/videoAdornos/List" value="VideoAdornos"/></h4>
+                                        <p>Acordeones</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-ac">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/acordeones.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/videoPuente/List" value="Mostrar video puentes"/></h4>
+                                        <p>Acordeones</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/acordeones/List_baja" value="Mostrar Acordeones borrados"/></h4>
+                                        <p>Acordeones borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/canciones/List_baja" value="Mostrar Canciones borradas"/></h4>
+                                        <p>Canciones Borradas</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/categorias/List_baja" value="Mostrar Categorías borradas"/></h4>
+                                        <p>Categorías borradas</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/detalleVenta/List_baja" value="Detalles de venta borrados"/></h4>
+                                        <p>Detalles de venta borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/entidades/List_baja" value="Mostrar Entidades borradas"/></h4>
+                                        <p>Entidades borradas</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/instruccionales/List_baja" value="Instruccionales borrados"/></h4>
+                                        <p>Instruccionales borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/municipios/List_restaurar" value="Mostrar Municipios borrados"/></h4>
+                                        <p>Municipios borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/paises/List_baja" value="Mostrar Paises borrados"/></h4>
+                                        <p>Paises borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/tiposPago/List_baja" value="Tipos de pago borrados"/></h4>
+                                        <p>Tipos de pago borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/tiposUsuario/List_baja" value="Tipos de usuario borrados"/></h4>
+                                        <p>Tipos de usuario borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/tiposVenta/List_baja" value="Tipos de venta borrados"/></h4>
+                                        <p>Tipos de venta borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/tonos/List_baja" value="Mostrar Tonos borrados"/></h4>
+                                        <p>Tonos borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/usuarios/List_baja" value="Mostrar Usuarios borrados"/></h4>
+                                        <p>Usuarios borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/ventas/List_baja" value="Mostrar Ventas borradas"/></h4>
+                                        <p>Ventas borradas</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/videoAdornos/List_baja" value="Videos de adornos borrados"/></h4>
+                                        <p>Videos de adornos borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-bo">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" class="img-fluid" alt=""/>
+                                            <a href="${facesContext.externalContext.requestContextPath}/resources/assets/img/portfolio/borrado.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+                                    </figure>
+
+                                    <div class="portfolio-info">
+                                        <h4><h:link outcome="/videoPuente/List_baja" value="Videos de puente borrados"/></h4>
+                                        <p>Videos de puente borrados</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+
+                    </div>
+                </section><!-- End Portfolio Section -->
+
+
+            </main>
+        </ui:define>
+    </ui:composition>
+
+</html>

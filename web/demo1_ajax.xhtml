@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template_crud.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="Ajax 1"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <!-- ======= Intro Section ======= -->
+            <section id="intro">
+                <div class="intro-container">
+                    <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+                        <div class="carousel-inner" role="listbox">
+
+                            <div class="carousel-item active" style="background-image: url(${facesContext.externalContext.requestContextPath}/resources/assets/img/intro-carousel/four.png)">
+                                <div class="carousel-container">
+                                    <div class="container">
+                                        <h2 class="animate__animated animate__fadeInDown">Editar datos</h2>
+                                        <p class="animate__animated animate__fadeInUp">En esta sección podras editar tus datos, para que estés seguro de quien eres</p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+
+
+                    </div>
+                </div>
+            </section><!-- End Intro Section -->
+
+            <main id="main">
+
+                <!-- ======= Featured Services Section Section ======= -->
+                <section id="contact" class="section-bg">
+                    <div class="container">
+
+                        <div class="section-header">
+                            <h3>Modificar datos</h3>
+                            <p>Edita tus datos</p>
+                        </div>
+
+                        <div class="row contact-info">
+
+                            <div class="col-md-4">
+                                <div class="contact-address">
+                                    <i class="ion-android-happy"></i>
+                                    <h3>Nombre</h3>
+
+                                    <h:form >
+                                        <h:panelGrid columns="1" >    
+
+                                            <h:inputText id="pass" 
+                                                         required="true"
+                                                         value="#{ajax1.user}"
+                                                         />
+                                            <h:commandButton value="Cambiar">
+                                                <f:ajax execute="pass"
+                                                        render="sms1"
+                                                        listener="#{ajax1.CambiaNameU(login.sacarId(id))}"/>
+                                            </h:commandButton>
+                                            <h:outputLabel id="sms1" 
+                                                           value="#{ajax1.sms}" />
+
+                                        </h:panelGrid>
+                                    </h:form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="contact-phone">
+                                    <i class="ion-android-person"></i>
+                                    <h3>Apellido paterno</h3>
+                                    <h:form >
+                                        <h:panelGrid columns="1" >    
+
+                                            <h:inputText id="pass" 
+                                                         required="true"
+                                                         value="#{ajax1.nuevoap}"
+                                                         />
+                                            <h:commandButton value="Cambiar">
+                                                <f:ajax execute="pass"
+                                                        render="sms2"
+                                                        listener="#{ajax1.CambiaAPU(login.sacarId(id))}"/>
+                                            </h:commandButton>
+                                            <h:outputLabel id="sms2" 
+                                                           value="#{ajax1.sms}" />
+
+                                        </h:panelGrid>
+                                    </h:form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="contact-email">
+                                    <i class="ion-person"></i>
+                                    <h3>Apellido Materno</h3>
+
+                                    <h:form >
+                                        <h:panelGrid columns="1">    
+
+                                            <h:inputText id="pass" 
+                                                         required="true"
+                                                         value="#{ajax1.nuevoam}"
+                                                         />
+                                            <h:commandButton value="Cambiar">
+                                                <f:ajax execute="pass"
+                                                        render="sms2"
+                                                        listener="#{ajax1.CambiaAMU(login.sacarId(id))}"/>
+                                            </h:commandButton>
+                                            <h:outputLabel id="sms2" 
+                                                           value="#{ajax1.sms}" />
+
+                                        </h:panelGrid>
+                                    </h:form>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </section><!-- End Contact Section -->
+
+            </main>
+        </ui:define>
+    </ui:composition>
+
+</html>

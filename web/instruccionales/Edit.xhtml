@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="InstruccionalesEditDlg" widgetVar="InstruccionalesEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditInstruccionalesTitle}">
+            <h:form id="InstruccionalesEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{instruccionalesController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditInstruccionalesLabel_id}" for="id" />
+                        <p:inputText disabled="true" id="id" value="#{instruccionalesController.selected.id}" title="#{bundle.EditInstruccionalesTitle_id}" required="true" requiredMessage="#{bundle.EditInstruccionalesRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditInstruccionalesLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{instruccionalesController.selected.nombre}" title="#{bundle.EditInstruccionalesTitle_nombre}" required="true" requiredMessage="#{bundle.EditInstruccionalesRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.EditInstruccionalesLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{instruccionalesController.selected.descripcion}" title="#{bundle.EditInstruccionalesTitle_descripcion}" required="true" requiredMessage="#{bundle.EditInstruccionalesRequiredMessage_descripcion}"/>
+                        <p:outputLabel value="#{bundle.EditInstruccionalesLabel_existencia}" for="existencia" />
+                        <p:inputText id="existencia" value="#{instruccionalesController.selected.existencia}" title="#{bundle.EditInstruccionalesTitle_existencia}" required="true" requiredMessage="#{bundle.EditInstruccionalesRequiredMessage_existencia}"/>
+                        <p:outputLabel value="#{bundle.EditInstruccionalesLabel_precioVenta}" for="precioVenta" />
+                        <p:inputText id="precioVenta" value="#{instruccionalesController.selected.precioVenta}" title="#{bundle.EditInstruccionalesTitle_precioVenta}" required="true" requiredMessage="#{bundle.EditInstruccionalesRequiredMessage_precioVenta}"/>
+                        <p:outputLabel value="#{bundle.EditInstruccionalesLabel_status}" for="status" />
+                        
+                        <p:selectOneMenu id="status" value="#{instruccionalesController.selected.status}" required="true" requiredMessage="#{bundle.EditInstruccionalesRequiredMessage_status}" style="width:125px">
+                            <f:selectItem itemLabel="Activo" itemValue="1" />
+                            <f:selectItem itemLabel="Baja" itemValue="0" />
+                        </p:selectOneMenu>
+                        
+                        <p:outputLabel value="#{bundle.EditInstruccionalesLabel_idTipoVenta}" for="idTipoVenta" />
+                        <p:selectOneMenu id="idTipoVenta" value="#{instruccionalesController.selected.idTipoVenta}" required="true" requiredMessage="#{bundle.EditInstruccionalesRequiredMessage_idTipoVenta}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{tiposVentaController.itemsAvailableSelectOne}"
+                                           var="idTipoVentaItem"
+                                           itemValue="#{idTipoVentaItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditInstruccionalesLabel_idCancion}" for="idCancion" />
+                        <p:selectOneMenu id="idCancion" value="#{instruccionalesController.selected.idCancion}" required="true" requiredMessage="#{bundle.EditInstruccionalesRequiredMessage_idCancion}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{cancionesController.itemsAvailableSelectOne}"
+                                           var="idCancionItem"
+                                           itemValue="#{idCancionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditInstruccionalesLabel_idTonoInstruccional}" for="idTonoInstruccional" />
+                        <p:selectOneMenu id="idTonoInstruccional" value="#{instruccionalesController.selected.idTonoInstruccional}" required="true" requiredMessage="#{bundle.EditInstruccionalesRequiredMessage_idTonoInstruccional}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{tonosController.itemsAvailableSelectOne}"
+                                           var="idTonoInstruccionalItem"
+                                           itemValue="#{idTonoInstruccionalItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditInstruccionalesLabel_idAcordeon}" for="idAcordeon" />
+                        <p:selectOneMenu id="idAcordeon" value="#{instruccionalesController.selected.idAcordeon}" required="true" requiredMessage="#{bundle.EditInstruccionalesRequiredMessage_idAcordeon}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{acordeonesController.itemsAvailableSelectOne}"
+                                           var="idAcordeonItem"
+                                           itemValue="#{idAcordeonItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{instruccionalesController.update}" value="#{bundle.Save}" update="display,:InstruccionalesListForm:datalist,:growl" oncomplete="handleSubmit(args, 'InstruccionalesEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="InstruccionalesEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

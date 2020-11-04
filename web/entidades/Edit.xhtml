@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EntidadesEditDlg" widgetVar="EntidadesEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEntidadesTitle}">
+            <h:form id="EntidadesEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{entidadesController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditEntidadesLabel_id}" for="id" />
+                        <p:inputText disabled="true" id="id" value="#{entidadesController.selected.id}" title="#{bundle.EditEntidadesTitle_id}" required="true" requiredMessage="#{bundle.EditEntidadesRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditEntidadesLabel_clavePais}" for="clavePais" />
+                        <p:inputText id="clavePais" value="#{entidadesController.selected.clavePais}" title="#{bundle.EditEntidadesTitle_clavePais}" />
+                        <p:outputLabel value="#{bundle.EditEntidadesLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{entidadesController.selected.nombre}" title="#{bundle.EditEntidadesTitle_nombre}" required="true" requiredMessage="#{bundle.EditEntidadesRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.EditEntidadesLabel_status}" for="status" />
+                        
+                        <p:selectOneMenu id="status" value="#{entidadesController.selected.status}" required="true" requiredMessage="#{bundle.EditEntidadesRequiredMessage_status}" style="width:125px">
+                            <f:selectItem itemLabel="Activo" itemValue="1" />
+                            <f:selectItem itemLabel="Baja" itemValue="0" />
+                        </p:selectOneMenu>
+                        
+                        <p:outputLabel value="#{bundle.EditEntidadesLabel_idPais}" for="idPais" />
+                        <p:selectOneMenu id="idPais" value="#{entidadesController.selected.idPais}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"
+                                           var="idPaisItem"
+                                           itemValue="#{idPaisItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{entidadesController.update}" value="#{bundle.Save}" update="display,:EntidadesListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EntidadesEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EntidadesEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

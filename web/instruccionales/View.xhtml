@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="InstruccionalesViewDlg" widgetVar="InstruccionalesViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewInstruccionalesTitle}">
+            <h:form id="InstruccionalesViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{instruccionalesController.selected != null}">
+                        <h:outputText value="#{bundle.ViewInstruccionalesLabel_id}"/>
+                        <h:outputText value="#{instruccionalesController.selected.id}" title="#{bundle.ViewInstruccionalesTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewInstruccionalesLabel_nombre}"/>
+                        <h:outputText value="#{instruccionalesController.selected.nombre}" title="#{bundle.ViewInstruccionalesTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewInstruccionalesLabel_descripcion}"/>
+                        <h:outputText value="#{instruccionalesController.selected.descripcion}" title="#{bundle.ViewInstruccionalesTitle_descripcion}"/>
+                        <h:outputText value="#{bundle.ViewInstruccionalesLabel_existencia}"/>
+                        <h:outputText value="#{instruccionalesController.selected.existencia}" title="#{bundle.ViewInstruccionalesTitle_existencia}"/>
+                        <h:outputText value="#{bundle.ViewInstruccionalesLabel_precioVenta}"/>
+                        <h:outputText value="#{instruccionalesController.selected.precioVenta}" title="#{bundle.ViewInstruccionalesTitle_precioVenta}"/>
+                        <h:outputText value="#{bundle.ViewInstruccionalesLabel_status}"/>
+                        <h:outputText value="#{instruccionalesController.selected.status}" title="#{bundle.ViewInstruccionalesTitle_status}"/>
+                        <h:outputText value="#{bundle.ViewInstruccionalesLabel_idTipoVenta}"/>
+                        <h:outputText value="#{instruccionalesController.selected.idTipoVenta}" title="#{bundle.ViewInstruccionalesTitle_idTipoVenta}"/>
+                        <h:outputText value="#{bundle.ViewInstruccionalesLabel_idCancion}"/>
+                        <h:outputText value="#{instruccionalesController.selected.idCancion}" title="#{bundle.ViewInstruccionalesTitle_idCancion}"/>
+                        <h:outputText value="#{bundle.ViewInstruccionalesLabel_idTonoInstruccional}"/>
+                        <h:outputText value="#{instruccionalesController.selected.idTonoInstruccional}" title="#{bundle.ViewInstruccionalesTitle_idTonoInstruccional}"/>
+                        <h:outputText value="#{bundle.ViewInstruccionalesLabel_idAcordeon}"/>
+                        <h:outputText value="#{instruccionalesController.selected.idAcordeon}" title="#{bundle.ViewInstruccionalesTitle_idAcordeon}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="InstruccionalesViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

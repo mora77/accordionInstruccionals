@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="VideoAdornosEditDlg" widgetVar="VideoAdornosEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditVideoAdornosTitle}">
+            <h:form id="VideoAdornosEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{videoAdornosController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditVideoAdornosLabel_id}" for="id" />
+                        <p:inputText disabled="true" id="id" value="#{videoAdornosController.selected.id}" title="#{bundle.EditVideoAdornosTitle_id}" required="true" requiredMessage="#{bundle.EditVideoAdornosRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditVideoAdornosLabel_ruta}" for="ruta" />
+                        <p:inputText id="ruta" value="#{videoAdornosController.selected.ruta}" title="#{bundle.EditVideoAdornosTitle_ruta}" required="true" requiredMessage="#{bundle.EditVideoAdornosRequiredMessage_ruta}"/>
+                        <p:outputLabel value="#{bundle.EditVideoAdornosLabel_status}" for="status" />
+                        
+                        <p:selectOneMenu id="status" value="#{videoAdornosController.selected.status}" required="true" requiredMessage="#{bundle.EditVideoAdornosRequiredMessage_status}" style="width:125px">
+                            <f:selectItem itemLabel="Activo" itemValue="1" />
+                            <f:selectItem itemLabel="Baja" itemValue="0" />
+                        </p:selectOneMenu>
+                        
+                        <p:outputLabel value="#{bundle.EditVideoAdornosLabel_idInstruccional}" for="idInstruccional" />
+                        <p:selectOneMenu id="idInstruccional" value="#{videoAdornosController.selected.idInstruccional}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{instruccionalesController.itemsAvailableSelectOne}"
+                                           var="idInstruccionalItem"
+                                           itemValue="#{idInstruccionalItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{videoAdornosController.update}" value="#{bundle.Save}" update="display,:VideoAdornosListForm:datalist,:growl" oncomplete="handleSubmit(args, 'VideoAdornosEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="VideoAdornosEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
